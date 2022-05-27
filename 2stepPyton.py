@@ -341,3 +341,33 @@ n, m = 3 3
 -> 1 3 5
 -> 4 1 6
 0
+Завдання 24. Трикутник Паскаля
+def trianglePasc(n,m):
+    matr=[]
+    for i in range(n):
+        row=[]
+        for j in range(m):
+           row+=[0]
+        matr+=[row]
+    for i in range(n):
+        matr[i][0]=1
+    for j in range(m):
+        matr[0][j]=1 
+    for i in range(1,n):
+        for j in range(1,m):
+            matr[i][j]=matr[i-1][j]+matr[i][j-1]
+    return matr
+    
+z=trianglePasc(5,6)
+for i in range(5):
+    for j in range(6):
+        print(z[i][j],end=' ')
+    print()
+    #Результат:
+    1 1 1 1 1 1 
+1 2 3 4 5 6 
+1 3 6 10 15 21 
+1 4 10 20 35 56 
+1 5 15 35 70 126 
+
+    
